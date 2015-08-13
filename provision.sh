@@ -129,6 +129,18 @@ mysql_go() {
 
 composer_go() {
 	php -r "readfile('https://getcomposer.org/installer');" | php
+	cd /vagrant/todo
+	/home/vagrant/composer.phar update
+}
+
+docs_go() {
+	cd /vagrant/todo
+	vendor/phpdocumentor/phpdocumentor/bin/phpdoc -d ./src -t ./docs/api
+}
+
+coverage_go() {
+	cd /vagrant/todo
+	vendor/phpunit/phpunit/phpunit --bootstrap vendor/autoload.php --coverage-html coverage tests
 }
 
 main
