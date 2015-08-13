@@ -11,7 +11,8 @@ Usage
 -----
 
 ### Startup
-	$ git clone https://github.com/bamboos/todo.git in any folder
+	$ git clone https://github.com/bamboos/todo.git
+	$ cd todo
 	$ vagrant up
 
 
