@@ -30,6 +30,8 @@ EOD
 	php_go
 	mysql_go
 	composer_go
+	docs_go
+	coverage_go
 
 	touch /var/lock/vagrant-provision
 }
@@ -74,14 +76,14 @@ apache_go() {
 
         Alias /docs /vagrant/todo/docs/api
 		<Directory /vagrant/todo/docs/api>
-			Order allow,deny
-			Allow from all
+			AllowOverride All
+            Require all granted
 		</Directory>
 
 		Alias /coverage /vagrant/todo/coverage
 		<Directory /vagrant/todo/coverage>
-			Order allow,deny
-			Allow from all
+			AllowOverride All
+            Require all granted
 		</Directory>
 </VirtualHost>
 EOF
