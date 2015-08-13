@@ -1,11 +1,7 @@
 <?php namespace ES\Todo\Http;
 
-use ES\Todo\DI\ContainerTrait;
-
 class Router
 {
-    use ContainerTrait;
-
     private $uri    = '';
     private $method = '';
 

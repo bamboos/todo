@@ -15,12 +15,14 @@ trait ContainerTrait
         if (in_array($name, $this->services)) {
             $providerName = __NAMESPACE__ . '\\Provider\\' . ucfirst($name);
 
-            if (!isset(Container::$providers[$providerName])) {
-                Container::$providers[$providerName] = new $providerName($name);;
+            if (!isset(Container::$providers[$name])) {
+                Container::$providers[$name] = new $providerName($name);;
             }
 
-            return Container::$providers[$providerName]->provide();
+            return Container::$providers[$name]->provide();
         }
+
+        return null;
     }
 
     private function registerServices()

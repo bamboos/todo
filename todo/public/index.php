@@ -3,4 +3,4 @@
 
 	use ES\Todo\App;
 
-	$app = new App();
+	(new App())->handle();

@@ -1,7 +1,5 @@
 <?php namespace ES\Todo\DI;
 
-use ES\Todo\DI\IProvider;
-
 class ProviderImp implements IProvider
 {
     private $name = '';
@@ -24,5 +22,7 @@ class ProviderImp implements IProvider
 
             return $this->instances[$name];
         }
+
+        return null;
     }
 }

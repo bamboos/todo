@@ -71,6 +71,18 @@ apache_go() {
             AllowOverride All
             Require all granted
         </Directory>
+
+        Alias /docs /vagrant/todo/docs/api
+		<Directory /vagrant/todo/docs/api>
+			Order allow,deny
+			Allow from all
+		</Directory>
+
+		Alias /coverage /vagrant/todo/coverage
+		<Directory /vagrant/todo/coverage>
+			Order allow,deny
+			Allow from all
+		</Directory>
 </VirtualHost>
 EOF
 
